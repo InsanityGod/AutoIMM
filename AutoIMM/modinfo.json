@@ -6,7 +6,7 @@
     "TheInsanityGod"
   ],
   "description": "Automatically creates IMM config definitions for mods that don't have one",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "dependencies": {
     "game": "",
     "insanitylib": "2.1.3",
