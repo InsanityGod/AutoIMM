@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
-using InsanityLib.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -37,9 +35,5 @@ public static class ConfigInterception
         return matcher.InstructionEnumeration();
     }
 
-    public static string RegisterFoundConfig<T>(string relativePath, Assembly assembly)
-    {
-        AutoIMMModSystem.FoundConfigs[relativePath] = (assembly, typeof(T));
-        return relativePath;
-    }
+    public static void RegisterFoundConfig<T>(string relativePath, Assembly assembly) => AutoIMMModSystem.FoundConfigs[relativePath] = (assembly, typeof(T));
 }

@@ -48,7 +48,7 @@ public static class PatchConfigLoadingCode
             {
                 if (!method.HasBody) continue;
 
-                if (method.HasGenericParameters)
+                if (method.HasGenericParameters || method.DeclaringType?.HasGenericParameters == true)
                 {
                     //TODO detect wrapper method
                     continue;
