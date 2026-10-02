@@ -59,6 +59,7 @@
   <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+	<None Include="..\LICENSE.txt" Pack="true" PackagePath="" CopyToOutputDirectory="PreserveNewest" />
 </ItemGroup>
 
 </Project>
