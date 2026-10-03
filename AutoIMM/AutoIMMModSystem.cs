@@ -4,9 +4,11 @@ using InsanityLib.Auto.Config.IMM;
 using InsanityLib.Generators.Attributes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 
 namespace AutoIMM;
 
@@ -35,6 +37,8 @@ public partial class AutoIMMModSystem : ModSystem
 
         foreach((var path, var entry) in FoundConfigs)
         {
+            if(!Path.Exists(Path.Combine(GamePaths.ModConfig, path))) continue; //Ignore files that don't exist yet at this point
+
             var mod = api.ModLoader.Mods.FirstOrDefault(mod => mod.Systems.FirstOrDefault()?.GetType().Assembly == entry.caller);
             mod ??= api.ModLoader.Mods.FirstOrDefault(mod => mod.Systems.FirstOrDefault()?.GetType().Assembly == entry.type.Assembly);
             if(mod is null)

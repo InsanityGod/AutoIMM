@@ -6,10 +6,10 @@
     "TheInsanityGod"
   ],
   "description": "Automatically creates IMM config definitions for mods that don't have one",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "dependencies": {
     "game": "",
-    "insanitylib": "2.1.3",
+    "insanitylib": "2.1.4",
     "integratedmodmanager": ""
   }
 }
